@@ -1,0 +1,55 @@
+{
+  "name": "pcgamex",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:restart": "docker-compose restart",
+    "docker:ps": "docker-compose ps",
+    "docker:stop": "docker-compose stop",
+    "docker:start": "docker-compose start",
+    "docker:rebuild": "docker-compose up -d --build",
+    "db:backup": "docker exec pcgamex_db pg_dump -U admin -d pcgamex > backup.sql",
+    "db:restore": "cat backup.sql | docker exec -i pcgamex_db psql -U admin -d pcgamex",
+    "db:connect": "docker exec -it pcgamex_db psql -U admin -d pcgamex",
+    "db:reset": "docker exec -i pcgamex_db psql -U admin -d pcgamex < database/init.sql",
+    "db:list": "docker exec pcgamex_db psql -U admin -d pcgamex -c \"\\dt\"",
+    "backend:install": "cd backend && npm install",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "dev:full": "npm run docker:up && npm run dev",
+    "clean": "docker-compose down -v && rm -rf node_modules",
+    "setup": "npm install && npm run docker:up && npm run db:reset"
+  },
+  "dependencies": {
+    "axios": "^1.13.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "vite": "^7.2.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "description": "PCgameX - Tienda de Hardware Gaming",
+  "author": "PCgameX",
+  "license": "MIT"
+}

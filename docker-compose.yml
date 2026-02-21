@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: pcgamex_db
+    environment:
+      POSTGRES_DB: pcgamex
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - pcgamex_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pcgamex_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pcgamex.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - pcgamex_network
+
+volumes:
+  postgres_data:
+
+networks:
+  pcgamex_network:
+    driver: bridge
