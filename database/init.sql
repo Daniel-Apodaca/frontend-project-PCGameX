@@ -68,12 +68,12 @@ INSERT INTO categorias (nombre, descripcion, icono) VALUES
 
 -- Insertar productos de ejemplo
 INSERT INTO productos (nombre, descripcion, precio, stock, categoria_id, imagen_url, marca, destacado, descuento) VALUES
-                                                                                                                      ('AMD Ryzen 9 5900X', 'Procesador de 12 núcleos y 24 hilos', 8500, 15, 1, 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea', 'AMD', true, 10),
+                                                                                                                      ('AMD Ryzen 9 5900X', 'Procesador de 12 núcleos y 24 hilos', 8500, 15, 1, 'https://i.ebayimg.com/images/g/rnUAAOSwxCxgzGNM/s-l1200.jpg', 'AMD', true, 10),
                                                                                                                       ('NVIDIA RTX 3080', 'Tarjeta gráfica 10GB GDDR6X', 18500, 8, 2, 'https://images.unsplash.com/photo-1591488320449-011701bb6704', 'NVIDIA', true, 5),
-                                                                                                                      ('Corsair Vengeance 32GB', 'Memoria RAM DDR4 3200MHz', 3200, 25, 3, 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed', 'Corsair', true, 15),
-                                                                                                                      ('Samsung 970 EVO 1TB', 'SSD NVMe M.2', 2800, 30, 5, 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea', 'Samsung', false, 0),
-                                                                                                                      ('Intel Core i9-12900K', 'Procesador 16 núcleos', 9200, 10, 1, 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea', 'Intel', true, 8),
-                                                                                                                      ('ASUS ROG Strix B550-F', 'Placa base gaming', 3500, 12, 4, 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea', 'ASUS', false, 0);
+                                                                                                                      ('Corsair Vengeance 32GB', 'Memoria RAM DDR4 3200MHz', 3200, 25, 3, 'https://m.media-amazon.com/images/I/61GpY38PAWL.jpg', 'Corsair', true, 15),
+                                                                                                                      ('Samsung 970 EVO 1TB', 'SSD NVMe M.2', 2800, 30, 5, 'https://m.media-amazon.com/images/I/81KciGMdzhL._AC_UF894,1000_QL80_.jpg', 'Samsung', false, 0),
+                                                                                                                      ('Intel Core i9-12900K', 'Procesador 16 núcleos', 9200, 10, 1, 'https://m.media-amazon.com/images/I/51x19d4dPuL.jpg', 'Intel', true, 8),
+                                                                                                                      ('ASUS ROG Strix B550-F', 'Placa base gaming', 3500, 12, 4, 'https://dlcdnwebimgs.asus.com/gain/803CCAEB-848C-416A-A24C-B107B9575134', 'ASUS', false, 0);
 
 -- Crear función para actualizar timestamp
 CREATE OR REPLACE FUNCTION update_updated_at_column()

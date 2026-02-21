@@ -55,7 +55,7 @@ const AdminLogin = () => {
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            placeholder="admin"
+                            placeholder=""
                             required
                         />
                     </div>
@@ -66,7 +66,7 @@ const AdminLogin = () => {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="admin123"
+                            placeholder=""
                             required
                         />
                     </div>
